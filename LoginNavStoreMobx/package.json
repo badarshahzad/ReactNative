@@ -22,8 +22,9 @@
   "dependencies": {
     "es6-symbol": "^3.1.1",
     "expo": "^27.0.1",
-    "mobx": "^5.0.3",
+    "mobx": "^4.3.1",
     "mobx-react": "^5.2.3",
+    "native-base": "^2.7.1",
     "react": "16.3.1",
     "react-native": "~0.55.2",
     "react-native-cli": "^2.0.1",
