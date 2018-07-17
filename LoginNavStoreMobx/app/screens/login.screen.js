@@ -4,11 +4,10 @@ import {
     Content
 } from 'native-base';
 
-import { View, Image, StyleSheet, Dimensions } from 'react-native';
+import { View, StyleSheet, Dimensions,ImageBackground } from 'react-native';
 import { inject } from 'mobx-react';
 import Login from '../components/login.components';
 import stores from '../stores';
-
 
 @inject("stores")
 export default class LoginScreen extends Component {
@@ -19,17 +18,13 @@ export default class LoginScreen extends Component {
     render() {
         const { stores } = this.props;
         return (
-            <Container>
                 <View style={styles.container}>
-                    <Content scrollEnabled={false}>
-                        <Image style={styles.loginBackground} source={stores.config.loginBG} />
+                        <ImageBackground style={styles.loginBackground} source={stores.config.loginBG}>
                         <View style={styles.loginForeground}>
                             <Login {...this.props} />
                         </View>
-
-                    </Content>
+                        </ImageBackground>
                 </View>
-            </Container>
         );
     }
 }
@@ -37,11 +32,11 @@ export default class LoginScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        position: 'absolute',
-        bottom: 0,
-        left: 0,
-        right: 0
+        flex:1,
     },
+    // container: {
+    //     flex: 1
+    // },
     loginBackground: {
         flex: 1,
         width: null,
@@ -52,7 +47,7 @@ const styles = StyleSheet.create({
         marginTop: Dimensions.get('window').height / 1.75,
         paddingTop: 20,
         paddingLeft: 10,
-        paddingRight:10,
+        paddingRight: 10,
         paddingBottom: 90,
         bottom: 0,
     }
